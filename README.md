@@ -1,0 +1,2 @@
+# awesome-python
+fluent python
