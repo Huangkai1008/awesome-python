@@ -24,8 +24,25 @@ class FrenchDeck:
         return self._cards[position]
 
 
+suit_values = dict(spades=3, hearts=2, diamonds=1, clubs=0)
+
+
+def spades_high(card):
+    """
+    扑克牌排序
+    :param card:
+    :return:
+    """
+    rank_value = FrenchDeck.ranks.index(card.rank)
+    return rank_value * len(suit_values) + suit_values[card.suit]
+
+
 deck = FrenchDeck()
 
 length = len(deck)
 
 print(choice(deck))
+
+
+for card in sorted(deck, key=spades_high):
+    print(card)
